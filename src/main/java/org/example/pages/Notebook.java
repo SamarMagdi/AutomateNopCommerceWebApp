@@ -12,16 +12,13 @@ public class Notebook {
         this.driver=driver;
         PageFactory.initElements(driver, this);
     }
-//    @FindBy(xpath = "//button[text()='Add to cart']")
+
     final private By addToCard= RelativeLocator.with(By.xpath("//button[text()='Add to cart']"));
-//    @FindBy(xpath = "//button[text()='Add to wishlist']")
     final private By addToWhitList=RelativeLocator.with(By.xpath("//button[text()='Add to wishlist']"));
-//    @FindBy(xpath = "//button[text()='Add to compare list']")
     final private By addToCompareList=RelativeLocator.with(By.xpath("//button[text()='Add to compare list']"));
-//    @FindBy(xpath = "//p[@class='content']")
     final private By confirmationMessage=RelativeLocator.with(By.xpath("//p[@class='content']"));
-//    @FindBy(xpath = "(//button[text()='Add to wishlist'])[1]")
     final private By addWhiteListButton=RelativeLocator.with(By.xpath("(//button[text()='Add to wishlist'])[1]"));
+
     public void clickAddToWhiteListButton(){
         driver.findElement(addWhiteListButton).click();
     }

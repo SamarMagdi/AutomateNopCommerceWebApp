@@ -11,8 +11,7 @@ import io.cucumber.junit.*;
 @CucumberOptions(features = "src/main/resources/Features", glue = { "Steps" }, monochrome = true, plugin = {
 		"pretty", "html:target/HtmlReports/report.html", "json:target/JsonReport/report.json",
 		"junit:target/JunitReport/report.xml" }, tags = "@SmokeTest"
-//plugin = {"pretty", "json:target/JsonReport/report.json" }
-//plugin = {"pretty", "junit:target/JunitReport/report.xml" }
+
 )
 public class Runner {
 

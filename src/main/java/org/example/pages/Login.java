@@ -14,28 +14,14 @@ public class Login {
 		PageFactory.initElements(driver, this);
 	}
 	
-//	@FindBy(xpath = "//a[@class='ico-login']")
+
 	public By loginTap= RelativeLocator.with(By.xpath("//a[@class='ico-login']"));
-	
-//	@FindBy(xpath="//input[@type='email']")
 	final private By email=RelativeLocator.with(By.xpath("//input[@type='email']"));
-	
-//	@FindBy(xpath="//input[@type='password']")
 	final private By password=RelativeLocator.with(By.xpath("//input[@type='password']"));
-
-//	@FindBy(xpath="//input[@type='checkbox']")
 	final private By rememberMe=RelativeLocator.with(By.xpath("//input[@type='checkbox']"));
-
-//	@FindBy(xpath="(//button[@type='submit'])[2]")
 	final private By loginButton=RelativeLocator.with(By.xpath("(//button[@type='submit'])[2]"));
-
-//	@FindBy(xpath="//a[text()='Forgot password?']")
 	final private By forgetPassword=RelativeLocator.with(By.xpath("//a[text()='Forgot password?']"));
-
-//	@FindBy(xpath="//button[@name='send-email']")
 	final private By recoverButton=RelativeLocator.with(By.xpath("//button[@name='send-email']"));
-
-//	@FindBy(xpath="//p[@class='content']")
 	final private By recoverConfirmationMessage=RelativeLocator.with(By.xpath("//p[@class='content']"));
 
 	//TODO: Login to Application
