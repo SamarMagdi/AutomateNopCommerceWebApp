@@ -18,12 +18,15 @@ public class SelectDifferentCategories extends Hooks {
     Login loginPage;
     Home homePage;
     Shoes shoesPage;
+
+    //user login to the app
     @Given("user login to the app")
     public void userInLoginPage() {
         initialization("Chrome");
         startApplication();
     }
 
+    //user select hover Computers categories and select Notebooks sub category
     @When("user select hover Computers categories and select Notebooks sub category")
     public void userSelectHoverComputersCategoriesAndSelectNotebooksSubCategory() {
         loginPage=new Login(driver);
@@ -45,6 +48,7 @@ public class SelectDifferentCategories extends Hooks {
         homePage.selectApparelProduct();
     }
 
+    //Shoes page should appear correctly
     @Then("Shoes page should appear correctly")
     public void shoesPageShouldAppearCorrectly() {
         Assert.assertEquals(homePage.getProductPageHeader(),"Shoes");

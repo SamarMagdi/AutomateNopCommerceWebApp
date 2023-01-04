@@ -16,12 +16,15 @@ public class AddDifferentProductsToCompareListCard extends Hooks {
     Home homePage;
     Shoes shoesPage;
     Notebook notebookPage;
+
+    // user login successfully
     @Given("user login Successfully")
     public void userInLoginPage() {
         initialization("Chrome");
         startApplication();
     }
 
+    //user add one product from Notebooks in computer category to Compare List
     @When("user add one product from Notebooks in computer category to Compare List")
     public void userAddOneProductFromNotebooksInComputerCategoryToShoppingCard() throws InterruptedException {
         loginPage=new Login(driver);
@@ -45,6 +48,7 @@ public class AddDifferentProductsToCompareListCard extends Hooks {
         Assert.assertEquals(shoesPage.getConfirmationMessage(),"The product has been added to your product comparison");
     }
 
+    //the selected two products should added and appear correctly
     @Then("the selected two products should added and appear correctly")
     public void theSelectedTwoProductsShouldAddedAndAppearCorrectlyInShoppingCard() {
         Assert.assertEquals(homePage.getShoppingCardAmount(),"(3)");

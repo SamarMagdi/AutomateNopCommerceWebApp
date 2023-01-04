@@ -20,13 +20,15 @@ public class FilterWithColor extends Hooks {
     Login loginPage;
     Home homePage;
     Shoes shoesPage;
+
+    //user login to the application
     @Given("user login to the application")
     public void userInLoginPage() {
         initialization("Chrome");
         startApplication();
     }
 
-
+    //user select subcategory and filter with specific color
     @When("user select subcategory and filter with specific color")
     public void userSelectSubcategoryAndFilterWithSpecificColor() {
         loginPage=new Login(driver);
@@ -38,6 +40,7 @@ public class FilterWithColor extends Hooks {
         shoesPage.filterShoes();
     }
 
+    //filtered results should appear correctly
     @Then("filtered results should appear correctly")
     public void filteredResultsShouldAppearCorrectly() {
         List<WebElement> elements=driver.findElements(shoesPage.getAddToCardButton());

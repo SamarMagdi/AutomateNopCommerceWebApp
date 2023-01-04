@@ -14,12 +14,15 @@ import static Steps.Registration.password;
 public class HoverAndSelect extends Hooks {
     Login loginPage;
     Home homePage;
+
+    //user login to Application
     @Given("user login to Application")
     public void userInLoginPage() {
         initialization("Chrome");
         startApplication();
     }
 
+    //Hover over any category and select subcategory
     @When("Hover over any category and select subcategory")
     public void hoverOverAnyCategoryAndSelectSubcategory() {
         loginPage=new Login(driver);
@@ -29,6 +32,7 @@ public class HoverAndSelect extends Hooks {
         homePage.selectComputerProduct();
     }
 
+    //the sub category page should appear correctly
     @Then("the sub category page should appear correctly")
     public void theSubCategoryPageShouldAppearCorrectly() {
         Assert.assertEquals(homePage.getProductPageHeader(),"Notebooks");

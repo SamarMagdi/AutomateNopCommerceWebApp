@@ -16,13 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Hooks {
 
-	// define main properties
 	protected WebDriver driver;
-	//FileInputStream readProperty;
-	//public static Properties prop;
-
-	// extend report
-	// define extend report
 	protected static ExtentReports report = new ExtentReports(System.getProperty("user.dir")+"/ExtentReportResults.html");
 	protected static ExtentTest test = report.startTest("nopcommerce demo Project");
 	private ChromeOptions options;

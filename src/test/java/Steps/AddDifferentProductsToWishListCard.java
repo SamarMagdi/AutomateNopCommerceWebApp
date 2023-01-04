@@ -16,12 +16,15 @@ public class AddDifferentProductsToWishListCard extends Hooks {
     Home homePage;
     Shoes shoesPage;
     Notebook notebookPage;
+
+    //user login correctly to the app
     @Given("user login correctly to the app")
     public void userInLoginPage() {
         initialization("Chrome");
         startApplication();
     }
 
+    //user add one product from Notebooks in computer category to White List
     @When("user add one product from Notebooks in computer category to White List")
     public void userAddOneProductFromNotebooksInComputerCategoryToShoppingCard() throws InterruptedException {
         loginPage=new Login(driver);
@@ -53,6 +56,7 @@ public class AddDifferentProductsToWishListCard extends Hooks {
         Assert.assertEquals(shoesPage.getConfirmationMessage(),"The product has been added to your wishlist");
     }
 
+    //the selected two products should added correctly
     @Then("the selected two products should added correctly")
     public void theSelectedTwoProductsShouldAddedAndAppearCorrectlyInShoppingCard() {
         Assert.assertEquals(homePage.getWhiteListAmount(),"(3)");

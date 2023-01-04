@@ -13,12 +13,14 @@ public class ResetPassword extends Hooks {
 
     Login loginPage;
 
+    //user is in login page and forget password
     @Given("user is in login page and forget password")
     public void userInLoginPage() {
         initialization("Chrome");
         startApplication();
     }
 
+    //user choose forget password link and add his email
     @When("user choose forget password link and add his email")
     public void userChooseForgetPasswordLinkAndAddHisEmail() {
         loginPage=new Login(driver);
@@ -26,6 +28,7 @@ public class ResetPassword extends Hooks {
         loginPage.setPassword(email);
     }
 
+    //Confirmation message should appear to user to check mail
     @Then("Confirmation message should appear to user to check mail")
     public void confirmationMessageShouldAppearToUserToCheckMail() {
         Assert.assertEquals(loginPage.getRecoverPasswordMessage(),"Email with instructions has been sent to you.");

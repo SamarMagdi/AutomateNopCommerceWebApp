@@ -16,12 +16,15 @@ public class CreateSuccessfulOrder extends Hooks {
     Login loginPage;
     Home homePage;
     CheckOut checkOutPage;
+
+    //user login Successfully to Nop Commerce App
     @Given("user login Successfully to Nop Commerce App")
     public void userInLoginPage() {
         initialization("Chrome");
         startApplication();
     }
 
+    //user click go to card button and complete checkout
     @When("user click go to card button and complete checkout")
     public void userClickGoToCardButtonAndCompleteCheckout() throws InterruptedException {
         loginPage=new Login(driver);
@@ -48,6 +51,7 @@ public class CreateSuccessfulOrder extends Hooks {
         checkOutPage.confirmPayment();
     }
 
+    //order should created successfully
     @Then("order should created successfully")
     public void orderShouldCreatedSuccessfully() throws IOException {
         homePage.logout();

@@ -13,12 +13,15 @@ public class Registration extends Hooks {
     org.example.pages.Registration registrationPage;
     public static String email;
     public static String password;
+
+    //user is in main page
     @Given("user is in main page")
     public void userInMainPage() {
         initialization("Chrome");
         startApplication();
     }
 
+    //user choose register tap
     @When("user choose register tap")
     public void userChooseRegisterTap() {
         registrationPage=new org.example.pages.Registration(driver);
@@ -37,6 +40,7 @@ public class Registration extends Hooks {
                 password);
     }
 
+    //user navigate to user page
     @Then("user navigate to user page")
     public void userNavigateToHomePage() {
         Assert.assertTrue(driver.getPageSource().contains("Your registration completed"));

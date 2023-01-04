@@ -15,12 +15,14 @@ public class CheckSearch extends Hooks {
     Login loginPage;
     Home homePage;
 
+    //user login to nop commerce web application
     @Given("user login to nop commerce web application")
     public void userInLoginPage() {
         initialization("Chrome");
         startApplication();
     }
 
+    //search for product
     @When("search for product")
     public void searchForProduct() {
         loginPage=new Login(driver);
@@ -30,6 +32,7 @@ public class CheckSearch extends Hooks {
 
     }
 
+    //results should appear correctly
     @Then("results should appear correctly")
     public void resultsShouldAppearCorrectly(){
         homePage.checkSearchResult();

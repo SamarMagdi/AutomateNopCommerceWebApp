@@ -16,12 +16,15 @@ public class AddDifferentProductsToShoppingCard extends Hooks {
     Home homePage;
     Shoes shoesPage;
     Notebook notebookPage;
+
+    //user login correctly
     @Given("user login correctly")
     public void userInLoginPage() {
         initialization("Chrome");
         startApplication();
     }
 
+    //user add one product from Notebooks in computer category to shopping card
     @When("user add one product from Notebooks in computer category to shopping card")
     public void userAddOneProductFromNotebooksInComputerCategoryToShoppingCard() throws InterruptedException {
         loginPage=new Login(driver);
@@ -53,6 +56,7 @@ public class AddDifferentProductsToShoppingCard extends Hooks {
         Assert.assertEquals(shoesPage.getConfirmationMessage(),"The product has been added to your shopping cart");
     }
 
+    //the selected two products should added and appear correctly in shopping card
     @Then("the selected two products should added and appear correctly in shopping card")
     public void theSelectedTwoProductsShouldAddedAndAppearCorrectlyInShoppingCard() {
         Assert.assertEquals(homePage.getShoppingCardAmount(),"(3)");

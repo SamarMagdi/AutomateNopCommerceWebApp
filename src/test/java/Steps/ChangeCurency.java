@@ -15,12 +15,15 @@ public class ChangeCurency extends Hooks {
     Login loginPage;
     Home homePage;
     String firstOption;
+
+    //user login to nop commerce
     @Given("user login to nop commerce")
     public void userInLoginPage() {
         initialization("Chrome");
         startApplication();
     }
 
+    //change current currency to another
     @When("change current currency to another")
     public void changeCurrentCurrencyToAnother() {
         loginPage=new Login(driver);
@@ -30,6 +33,7 @@ public class ChangeCurency extends Hooks {
         homePage.changeCurrency();
     }
 
+    //currency should changed correctly
     @Then("currency should changed correctly")
     public void currencyShouldChangedCorrectly() {
         Assert.assertNotEquals(firstOption,homePage.getFirstCurrency());
