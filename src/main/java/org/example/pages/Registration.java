@@ -10,44 +10,45 @@ public class Registration {
     WebDriver driver;
 
     public Registration(WebDriver driver) {
-        this.driver=driver;
+        this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
+    /*A signup page (also known as a registration page) enables users and organizations to independently register and gain access to your system. It is common to have multiple signup pages depending on the types of people and organizations you want to register.*/
     // registration tap
-    public By registerTap= RelativeLocator.with(By.xpath("//a[@class='ico-register']"));
+    public By registerTap = RelativeLocator.with(By.xpath("//a[@class='ico-register']"));
 
     // user data
-    final private By gender=RelativeLocator.with(By.xpath("(//input[@type='radio'])[1]"));
-    final private By firstName=RelativeLocator.with(By.xpath("//input[@name='FirstName']"));
-    final private By lastName=RelativeLocator.with(By.xpath("//input[@name='LastName']"));
-    public By continueButton=RelativeLocator.with(By.xpath("//a[@class='button-1 register-continue-button']"));
-    final private By dayOfBirth=RelativeLocator.with(By.xpath("//select[@name='DateOfBirthDay']"));
-    final private By monthOfBirth=RelativeLocator.with(By.xpath("//select[@name='DateOfBirthMonth']"));
-    final private By yearOfBirth=RelativeLocator.with(By.xpath("//select[@name='DateOfBirthYear']"));
-    final private By email=RelativeLocator.with(By.xpath("//input[@type='email']"));
-    final private By company=RelativeLocator.with(By.xpath("//input[@name='Company']"));
-    final private By password=RelativeLocator.with(By.xpath("(//input[@type='password'])[1]"));
-    final private By confirmPassword=RelativeLocator.with(By.xpath("(//input[@type='password'])[2]"));
-    final private By registerButton=RelativeLocator.with(By.xpath("(//button[@type='submit'])[2]"));
+    final private By gender = RelativeLocator.with(By.xpath("(//input[@type='radio'])[1]"));
+    final private By firstName = RelativeLocator.with(By.xpath("//input[@name='FirstName']"));
+    final private By lastName = RelativeLocator.with(By.xpath("//input[@name='LastName']"));
+    public By continueButton = RelativeLocator.with(By.xpath("//a[@class='button-1 register-continue-button']"));
+    final private By dayOfBirth = RelativeLocator.with(By.xpath("//select[@name='DateOfBirthDay']"));
+    final private By monthOfBirth = RelativeLocator.with(By.xpath("//select[@name='DateOfBirthMonth']"));
+    final private By yearOfBirth = RelativeLocator.with(By.xpath("//select[@name='DateOfBirthYear']"));
+    final private By email = RelativeLocator.with(By.xpath("//input[@type='email']"));
+    final private By company = RelativeLocator.with(By.xpath("//input[@name='Company']"));
+    final private By password = RelativeLocator.with(By.xpath("(//input[@type='password'])[1]"));
+    final private By confirmPassword = RelativeLocator.with(By.xpath("(//input[@type='password'])[2]"));
+    final private By registerButton = RelativeLocator.with(By.xpath("(//button[@type='submit'])[2]"));
 
     public void registerNewUser(
             String fname,
             String lname,
             String useerEmail,
             String companyName,
-            String userPassword){
+            String userPassword) {
         // TODO: add new user
         // fill user data
         driver.findElement(gender).click();
         driver.findElement(firstName).sendKeys(fname);
         driver.findElement(lastName).sendKeys(lname);
 
-        Select select=new Select(driver.findElement(dayOfBirth));
+        Select select = new Select(driver.findElement(dayOfBirth));
         select.selectByIndex(1);
-        select=new Select(driver.findElement(monthOfBirth));
+        select = new Select(driver.findElement(monthOfBirth));
         select.selectByIndex(1);
-        select=new Select(driver.findElement(yearOfBirth));
+        select = new Select(driver.findElement(yearOfBirth));
         select.selectByIndex(1);
 
         driver.findElement(email).sendKeys(useerEmail);

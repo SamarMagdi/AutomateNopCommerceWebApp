@@ -3,6 +3,9 @@ Feature: Feature to test filter Products with color functionality in Nop Commerc
 
   @SmokeTest
   Scenario: SC7- Logged user could filter with color
-    Given   user login to the application
-    When    user select subcategory and filter with specific color
+    #user login to the application
+    Given   login to nop application
+    #user select subcategory and filter with specific color
+    When    select subcategory and filter with specific color
+    #filtered results should appear correctly
     Then    filtered results should appear correctly

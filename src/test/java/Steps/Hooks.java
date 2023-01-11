@@ -3,7 +3,7 @@ package Steps;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.example.pages.PageBase;
+import org.example.pages.PageObjectBase;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -72,9 +72,9 @@ public class Hooks {
 		// navigate to website
 		driver.get("https://demo.nopcommerce.com/");
 		// take screenshot to Main page
-		PageBase.captureScreenshot(driver, "MainPage");
+		PageObjectBase.captureScreenshot(driver, "MainPage");
 		// assert if application start correctly
-		PageBase.assertToObjectExistWithGetText(driver, "Log in");
+		PageObjectBase.assertToObjectExistWithGetText(driver, "Log in");
 		// extend report status
 //		test.log(LogStatus.PASS, "Starting Application Successfully");
 	}

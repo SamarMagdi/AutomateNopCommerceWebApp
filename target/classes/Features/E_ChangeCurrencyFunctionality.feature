@@ -3,6 +3,9 @@ Feature: Feature to test Change Currency functionality to Nop Commerce web appli
 
   @SmokeTest
   Scenario: SC5- Logged User could switch between currencies US-Euro
-    Given   user login to nop commerce
+    #user login to nop commerce
+    Given   login to an application
+    #change current currency to another
     When    change current currency to another
-    Then    currency should changed correctly
+    #currency should changed correctly
+    Then    currency should change correctly
